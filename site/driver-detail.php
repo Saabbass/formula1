@@ -10,7 +10,11 @@ $sql = "SELECT * FROM drivers WHERE driverId = $driverid";
 
 $result = mysqli_query($conn, $sql);
 
-$driver = mysqli_fetch_all($result, MYSQLI_ASSOC);
+// info van de rij ophalen
+$driver = mysqli_fetch_assoc($result);
+
+// print_r($driver);
+// die;
 
 ?>
 
@@ -41,19 +45,13 @@ $driver = mysqli_fetch_all($result, MYSQLI_ASSOC);
         </thead>
 
         <tbody>
-            <?php foreach ($driver as $info) : ?>
-                <tr>
-                    <td><?php echo $info['driverId']; ?></td>
-                    <td><?php echo $info['driverRef']; ?></td>
-                    <td><?php echo $info['number']; ?></td>
-                    <td><?php echo $info['code']; ?></td>
-                    <td><?php echo $info['forename']; ?></td>
-                    <td><?php echo $info['surname']; ?></td>
-                    <td><?php echo $info['dob']; ?></td>
-                    <td><?php echo $info['nationality']; ?></td>
-                    <td><?php echo $info['url']; ?></td>
+            <tr>
+                    <!-- alle informatie tonen -->
+                    <?php foreach ($driver as $info) : ?>
+                        <td><?php echo $info; ?></td>
+                    <?php endforeach; ?>
+                
                 </tr>
-            <?php endforeach; ?>
         </tbody>
     </table>
 </body>
