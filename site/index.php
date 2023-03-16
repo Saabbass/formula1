@@ -39,7 +39,7 @@ $drivers = mysqli_fetch_all($result, MYSQLI_ASSOC);
         </thead>
 
         <tbody>
-            <?php foreach($drivers as $driver): ?>
+            <?php foreach ($drivers as $driver) : ?>
                 <tr>
                     <td><?php echo $driver['driverRef']; ?></td>
                     <td><?php echo $driver['forename']; ?></td>
