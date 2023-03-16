@@ -1,0 +1,14 @@
+body{
+
+}
+
+table th{
+    text-align: center;
+    border: 2px solid black;
+    padding:5px;
+}
+
+table td{
+    text-align: center;
+    padding:2px;
+}

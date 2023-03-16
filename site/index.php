@@ -22,7 +22,7 @@ $drivers = mysqli_fetch_all($result, MYSQLI_ASSOC);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=<?php echo time(); ?>">
     <title>Document</title>
 </head>
 
@@ -35,6 +35,7 @@ $drivers = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 <th>Voornaam</th>
                 <th>Achternaam</th>
                 <th>Geboortedatum</th>
+                <th>links</th>
             </tr>
         </thead>
 
@@ -45,6 +46,7 @@ $drivers = mysqli_fetch_all($result, MYSQLI_ASSOC);
                     <td><?php echo $driver['forename']; ?></td>
                     <td><?php echo $driver['surname']; ?></td>
                     <td><?php echo $driver['dob']; ?></td>
+                    <td><a href="driver-detail.php?id=<?php echo $driver['driverId']; ?>">Geef details</a></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
